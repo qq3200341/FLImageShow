@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDa-yi-H9H">
+                                <rect key="frame" x="111" y="140" width="98" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="J7L-dJ-6ZM"/>
+                                </constraints>
+                                <state key="normal" title="本地图片"/>
+                                <connections>
+                                    <action selector="localImagesClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c9H-6L-Cn1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ou0-HK-5s1">
+                                <rect key="frame" x="111" y="178" width="98" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9eT-Zg-q40"/>
+                                </constraints>
+                                <state key="normal" title="网络图片"/>
+                                <connections>
+                                    <action selector="netImagesClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5W1-i4-hFI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rgw-Bd-J9v">
+                                <rect key="frame" x="111" y="216" width="98" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="QLl-6j-juU"/>
+                                </constraints>
+                                <state key="normal" title="相册图片"/>
+                                <connections>
+                                    <action selector="albumImagesClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J75-vD-6cq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ou0-HK-5s1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="111" id="4em-0g-hKn"/>
+                            <constraint firstItem="Rgw-Bd-J9v" firstAttribute="top" secondItem="ou0-HK-5s1" secondAttribute="bottom" constant="8" id="5ch-sU-9q8"/>
+                            <constraint firstItem="Rgw-Bd-J9v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="111" id="NPg-2R-hZO"/>
+                            <constraint firstAttribute="trailing" secondItem="TDa-yi-H9H" secondAttribute="trailing" constant="111" id="WbC-ZJ-m1P"/>
+                            <constraint firstAttribute="trailing" secondItem="ou0-HK-5s1" secondAttribute="trailing" constant="111" id="XEN-SU-iyo"/>
+                            <constraint firstItem="TDa-yi-H9H" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="120" id="dVh-tt-Xjb"/>
+                            <constraint firstItem="TDa-yi-H9H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="111" id="o2y-zF-TFP"/>
+                            <constraint firstItem="ou0-HK-5s1" firstAttribute="top" secondItem="TDa-yi-H9H" secondAttribute="bottom" constant="8" id="qTo-Uy-LhE"/>
+                            <constraint firstAttribute="trailing" secondItem="Rgw-Bd-J9v" secondAttribute="trailing" constant="111" id="uwp-To-hdv"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="429"/>
+        </scene>
+    </scenes>
+</document>
