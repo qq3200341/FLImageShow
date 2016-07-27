@@ -66,7 +66,15 @@
 {
     _netImageUrl = netImageUrl;
     [_imageView sd_setImageWithURL:[NSURL URLWithString:netImageUrl] placeholderImage:[UIImage imageNamed:@"image_default"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        [self updateImageViewFrame:image];
+        if (error)
+        {
+            _imageView.image = [UIImage imageNamed:@"image_default"];
+            [self updateImageViewFrame:_imageView.image];
+        }
+        else
+        {
+            [self updateImageViewFrame:image];
+        }
     }];
 }
 - (void)setAlbumImageUrl:(NSURL *)albumImageUrl

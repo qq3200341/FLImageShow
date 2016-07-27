@@ -38,7 +38,6 @@
 		3404C7DB1C80227C00F7361F /* ico_选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3404C7CD1C80227C00F7361F /* ico_选中@2x.png */; };
 		3404C7DC1C80227C00F7361F /* MyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3404C7D01C80227C00F7361F /* MyCollectionViewCell.m */; };
 		3404C7DD1C80227C00F7361F /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3404C7D11C80227C00F7361F /* MyCollectionViewCell.xib */; };
-		3404C7E01C8040A300F7361F /* flImageShow_arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3404C7DF1C8040A300F7361F /* flImageShow_arrow_left@2x.png */; };
 		347DA3B71C7EDC57005B7DF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 347DA3B61C7EDC57005B7DF6 /* main.m */; };
 		347DA3BA1C7EDC57005B7DF6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 347DA3B91C7EDC57005B7DF6 /* AppDelegate.m */; };
 		347DA3BD1C7EDC57005B7DF6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 347DA3BC1C7EDC57005B7DF6 /* ViewController.m */; };
@@ -60,6 +59,7 @@
 		347DA3ED1C7EE978005B7DF6 /* FLImageShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 347DA3EB1C7EE978005B7DF6 /* FLImageShowCell.m */; };
 		347DA3EE1C7EE978005B7DF6 /* FLImageShowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 347DA3EC1C7EE978005B7DF6 /* FLImageShowCell.xib */; };
 		347DA3F11C7F060B005B7DF6 /* FLImageShowScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 347DA3F01C7F060B005B7DF6 /* FLImageShowScrollView.m */; };
+		51F3D2131D488BC700937EC2 /* flImageShow_arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51F3D2121D488BC700937EC2 /* flImageShow_arrow_left@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,7 +114,6 @@
 		3404C7CF1C80227C00F7361F /* MyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewCell.h; sourceTree = "<group>"; };
 		3404C7D01C80227C00F7361F /* MyCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewCell.m; sourceTree = "<group>"; };
 		3404C7D11C80227C00F7361F /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
-		3404C7DF1C8040A300F7361F /* flImageShow_arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flImageShow_arrow_left@2x.png"; sourceTree = "<group>"; };
 		347DA3B21C7EDC57005B7DF6 /* FLImageShowDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLImageShowDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		347DA3B61C7EDC57005B7DF6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		347DA3B81C7EDC57005B7DF6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -144,6 +143,7 @@
 		347DA3EC1C7EE978005B7DF6 /* FLImageShowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLImageShowCell.xib; sourceTree = "<group>"; };
 		347DA3EF1C7F060B005B7DF6 /* FLImageShowScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLImageShowScrollView.h; sourceTree = "<group>"; };
 		347DA3F01C7F060B005B7DF6 /* FLImageShowScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLImageShowScrollView.m; sourceTree = "<group>"; };
+		51F3D2121D488BC700937EC2 /* flImageShow_arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flImageShow_arrow_left@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,7 +245,7 @@
 		3404C7DE1C80408900F7361F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				3404C7DF1C8040A300F7361F /* flImageShow_arrow_left@2x.png */,
+				51F3D2121D488BC700937EC2 /* flImageShow_arrow_left@2x.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -399,7 +399,6 @@
 				3404C7D81C80227C00F7361F /* ico_向下箭头@2x.png in Resources */,
 				347DA3D91C7EDEDC005B7DF6 /* 3.jpg in Resources */,
 				347DA3D71C7EDEDC005B7DF6 /* 1.jpg in Resources */,
-				3404C7E01C8040A300F7361F /* flImageShow_arrow_left@2x.png in Resources */,
 				347DA3C21C7EDC58005B7DF6 /* Assets.xcassets in Resources */,
 				3404C7C01C7FFD7000F7361F /* NetImagesVC.xib in Resources */,
 				3404C7DB1C80227C00F7361F /* ico_选中@2x.png in Resources */,
@@ -414,6 +413,7 @@
 				3404C7D51C80227C00F7361F /* btn_确定@2x.png in Resources */,
 				347DA3DD1C7EDEDC005B7DF6 /* 7.jpg in Resources */,
 				347DA3C01C7EDC57005B7DF6 /* Main.storyboard in Resources */,
+				51F3D2131D488BC700937EC2 /* flImageShow_arrow_left@2x.png in Resources */,
 				3404C7DA1C80227C00F7361F /* ico_相机@2x.png in Resources */,
 				347DA3E91C7EE438005B7DF6 /* FLImageShowVC.xib in Resources */,
 			);
