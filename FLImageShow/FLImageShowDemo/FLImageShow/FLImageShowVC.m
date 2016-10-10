@@ -85,21 +85,21 @@ typedef enum : NSUInteger {
     layout.minimumLineSpacing = 10;
     _myCollectionView.collectionViewLayout = layout;
     
+    _myCollectionView.showsVerticalScrollIndicator = NO;
+    _myCollectionView.showsHorizontalScrollIndicator = NO;
+    
     //添加返回手势
     UITapGestureRecognizer *viewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapAction)];
     self.view.userInteractionEnabled = YES;
     [self.view addGestureRecognizer:viewTap];
     
     [self rotateView];
-}
-
-- (void)viewDidLayoutSubviews
-{
-    [super viewDidLayoutSubviews];
+    
     //滚动到当前图片位置
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_currentIndex inSection:0];
     [_myCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
 }
+
 #pragma mark--旋转
 /**
  *  旋转self.view
@@ -206,10 +206,11 @@ typedef enum : NSUInteger {
     // Dispose of any resources that can be recreated.
 }
 #pragma mark--UIScrollViewDelegate
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     //滑动后改变顶部显示的当前位置
-    _currentIndex = scrollView.contentOffset.x / scrollView.frame.size.width;
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    _currentIndex = scrollView.contentOffset.x / screenWidth + 0.5;
     NSInteger allCount = 0;
     switch (_imageType)
     {

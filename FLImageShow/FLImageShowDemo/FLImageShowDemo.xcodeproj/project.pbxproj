@@ -363,6 +363,8 @@
 				TargetAttributes = {
 					347DA3B11C7EDC57005B7DF6 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 6XT62U87V8;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -561,11 +563,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6XT62U87V8;
 				INFOPLIST_FILE = FLImageShowDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maipu.FLImageShowDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "466ca987-8724-440f-bf2f-c69031e485ad";
+				PROVISIONING_PROFILE_SPECIFIER = "迈普欣动DevelopmentProfile";
 			};
 			name = Debug;
 		};
@@ -573,11 +578,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 2AP3377QGG;
 				INFOPLIST_FILE = FLImageShowDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maipu.FLImageShowDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "90b9d28d-2629-4cd4-9bce-6755c8945003";
+				PROVISIONING_PROFILE_SPECIFIER = "欣动inhouseProfile";
 			};
 			name = Release;
 		};

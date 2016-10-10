@@ -18,7 +18,7 @@
     //设置代理scrollview的代理对象
     _scrollView.delegate=self;
     //设置最大伸缩比例
-    _scrollView.maximumZoomScale = 2.0;
+    _scrollView.maximumZoomScale = 3.0;
     //设置最小伸缩比例
     _scrollView.minimumZoomScale = 1;
     
@@ -71,6 +71,9 @@
         }
     }
     _imageView.frame = CGRectMake(0, 0, imageViewSize.width, imageViewSize.height);
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    _imageView.center = CGPointMake(screenWidth / 2, screenHeight / 2);
     _scrollView.childView = _imageView;
 }
 #pragma mark--重写
