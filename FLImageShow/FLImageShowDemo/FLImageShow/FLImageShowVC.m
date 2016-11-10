@@ -21,6 +21,10 @@ typedef enum : NSUInteger {
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UILabel *topLabel;
 @property (nonatomic,assign)ImageType imageType;
+/**
+ 是否第一次进入到此界面
+ */
+@property (nonatomic,assign)BOOL isFirst;
 @end
 
 @implementation FLImageShowVC
@@ -41,6 +45,7 @@ typedef enum : NSUInteger {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _isFirst = YES;
     //添加检测旋转通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getNotWithIentationChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
     
@@ -93,7 +98,7 @@ typedef enum : NSUInteger {
     self.view.userInteractionEnabled = YES;
     [self.view addGestureRecognizer:singleViewTap];
     
-    UITapGestureRecognizer *doubleViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleViewTapAction)];
+    UITapGestureRecognizer *doubleViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleViewTapAction:)];
     doubleViewTap.numberOfTapsRequired = 2;
     self.view.userInteractionEnabled = YES;
     [self.view addGestureRecognizer:doubleViewTap];
@@ -101,10 +106,18 @@ typedef enum : NSUInteger {
     [singleViewTap requireGestureRecognizerToFail:doubleViewTap];
     
     [self rotateView];
+}
+
+- (void)viewDidLayoutSubviews
+{
+    if (_isFirst)
+    {
+        //滚动到当前图片位置
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:_currentIndex inSection:0];
+        [_myCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+        _isFirst = NO;
+    }
     
-    //滚动到当前图片位置
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_currentIndex inSection:0];
-    [_myCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
 }
 
 #pragma mark--旋转
@@ -203,13 +216,17 @@ typedef enum : NSUInteger {
 {
     _topView.hidden = !_topView.hidden;
 }
-- (void)doubleViewTapAction
+- (void)doubleViewTapAction:(UITapGestureRecognizer *)tap
 {
     FLImageShowCell *cell = (FLImageShowCell *)[_myCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:_currentIndex inSection:0]];
-    [UIView animateWithDuration:0.5 animations:^{
-        cell.scrollView.zoomScale = cell.scrollView.zoomScale == 1 ? cell.scrollView.maximumZoomScale : 1;
-    }];
+    CGFloat newScale = cell.scrollView.zoomScale == 1 ? cell.scrollView.maximumZoomScale : 1;
+    CGFloat newWidth = cell.scrollView.frame.size.width / newScale;
+    CGFloat newHeight = cell.scrollView.frame.size.height / newScale;
+    CGPoint point = [tap locationInView:cell.scrollView];
+    CGRect zoomRect = CGRectMake(point.x - newWidth / 2, point.y - newHeight / 2, newWidth, newHeight);
+    [cell.scrollView zoomToRect:zoomRect animated:YES];
 }
+
 - (IBAction)topLeftBtnClick:(UIButton *)sender
 {
     [self.navigationController popViewControllerAnimated:YES];

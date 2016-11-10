@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FLImageShowVC">
             <connections>
-                <outlet property="myCollectionView" destination="OYx-0U-5A4" id="8f7-Zy-Znj"/>
+                <outlet property="myCollectionView" destination="hfv-El-ixr" id="q0K-fM-tCy"/>
                 <outlet property="topLabel" destination="4b8-5I-f8T" id="qei-om-YVf"/>
                 <outlet property="topView" destination="Iw2-aA-IRG" id="jOA-gP-fbR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -19,16 +19,17 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="OYx-0U-5A4">
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pmg-wE-P1K">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hfv-El-ixr">
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Z2j-vS-Xd2">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="aY4-53-1TM"/>
-                        <outlet property="delegate" destination="-1" id="M42-ug-bX9"/>
+                        <outlet property="dataSource" destination="-1" id="Wet-5W-Muz"/>
+                        <outlet property="delegate" destination="-1" id="zSb-eh-JgS"/>
                     </connections>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iw2-aA-IRG">
@@ -61,13 +62,13 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="OYx-0U-5A4" secondAttribute="bottom" id="4e7-xM-aSD"/>
-                <constraint firstItem="OYx-0U-5A4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="62C-km-TxA"/>
+                <constraint firstAttribute="trailing" secondItem="hfv-El-ixr" secondAttribute="trailing" constant="-10" id="Mgl-8q-79W"/>
                 <constraint firstItem="Iw2-aA-IRG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PZL-xl-DNe"/>
                 <constraint firstItem="Iw2-aA-IRG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SQq-lY-yKw"/>
-                <constraint firstAttribute="trailing" secondItem="OYx-0U-5A4" secondAttribute="trailing" constant="-10" id="cr4-A8-TdP"/>
+                <constraint firstAttribute="bottom" secondItem="hfv-El-ixr" secondAttribute="bottom" id="lyN-2T-PSD"/>
+                <constraint firstItem="hfv-El-ixr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ooW-TF-678"/>
+                <constraint firstItem="hfv-El-ixr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="v0M-fa-wTw"/>
                 <constraint firstAttribute="trailing" secondItem="Iw2-aA-IRG" secondAttribute="trailing" id="zPQ-R9-DVr"/>
-                <constraint firstItem="OYx-0U-5A4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zbJ-ZN-9Bv"/>
             </constraints>
             <point key="canvasLocation" x="7" y="-37"/>
         </view>
