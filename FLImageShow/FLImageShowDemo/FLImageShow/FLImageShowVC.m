@@ -88,10 +88,17 @@ typedef enum : NSUInteger {
     _myCollectionView.showsVerticalScrollIndicator = NO;
     _myCollectionView.showsHorizontalScrollIndicator = NO;
     
-    //添加返回手势
-    UITapGestureRecognizer *viewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapAction)];
+    //添加手势
+    UITapGestureRecognizer *singleViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleViewTapAction)];
     self.view.userInteractionEnabled = YES;
-    [self.view addGestureRecognizer:viewTap];
+    [self.view addGestureRecognizer:singleViewTap];
+    
+    UITapGestureRecognizer *doubleViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleViewTapAction)];
+    doubleViewTap.numberOfTapsRequired = 2;
+    self.view.userInteractionEnabled = YES;
+    [self.view addGestureRecognizer:doubleViewTap];
+    
+    [singleViewTap requireGestureRecognizerToFail:doubleViewTap];
     
     [self rotateView];
     
@@ -192,9 +199,16 @@ typedef enum : NSUInteger {
     [self rotateView];
 }
 #pragma mark--点击
-- (void)viewTapAction
+- (void)singleViewTapAction
 {
     _topView.hidden = !_topView.hidden;
+}
+- (void)doubleViewTapAction
+{
+    FLImageShowCell *cell = (FLImageShowCell *)[_myCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:_currentIndex inSection:0]];
+    [UIView animateWithDuration:0.5 animations:^{
+        cell.scrollView.zoomScale = cell.scrollView.zoomScale == 1 ? cell.scrollView.maximumZoomScale : 1;
+    }];
 }
 - (IBAction)topLeftBtnClick:(UIButton *)sender
 {

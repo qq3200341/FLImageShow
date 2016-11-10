@@ -14,6 +14,7 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     //设置实现缩放
     //设置代理scrollview的代理对象
     _scrollView.delegate=self;
@@ -116,6 +117,27 @@
 -(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
     return _imageView;
+}
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView
+{
+    // 让UIImageView在UIScrollView缩放后居中显示
+    CGFloat offsetX = (scrollView.bounds.size.width > scrollView.contentSize.width)?
+    
+    
+    (scrollView.bounds.size.width - scrollView.contentSize.width) * 0.5 : 0.0;
+    
+    
+    CGFloat offsetY = (scrollView.bounds.size.height > scrollView.contentSize.height)?
+    
+    
+    (scrollView.bounds.size.height - scrollView.contentSize.height) * 0.5 : 0.0;
+    
+    
+    _imageView.center = CGPointMake(scrollView.contentSize.width * 0.5 + offsetX,
+                            
+                            
+                            scrollView.contentSize.height * 0.5 + offsetY);
+    
 }
 
 #pragma mark--通知
